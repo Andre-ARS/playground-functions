@@ -16,16 +16,22 @@ function calcArea(base, height) {
 function splitSentence(string) {
   let splitedString = string.split('') 
   let splitedWords = []
+  let word = '';
 for (let key in splitedString) {
-  let word = ''
-  if () {
-    
+  if (splitedString[key] !== ' ') {
+    word = word + splitedString[key];
+  } else {
+    splitedWords.push(word)
+    word  = ''
+  }
+  if (key >= splitedString.length - 1) {
+    splitedWords.push(word)
+    break
   }
 }
-
-
+  return splitedWords
 }
-console.log(splitSentence('go trybe'));
+console.log(splitSentence(''));
 // Desafio 4
 function concatName() {
   
