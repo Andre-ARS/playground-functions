@@ -77,10 +77,23 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  
+function fizzBuzz(numbers) {
+ let divisiveis = []
+ 
+  for (let key in numbers) {
+    if (numbers[key] % 3 === 0 && numbers[key] % 5 === 0) {
+      divisiveis.push('fizzBuzz')
+    } else if (numbers[key] % 3 === 0) {
+      divisiveis.push('fizz')
+    } else if (numbers[key] % 5 === 0) {
+      divisiveis.push('buzz')
+    } else {
+      divisiveis.push('bug!')
+    }
+  }
+  return divisiveis
 }
-
+console.log(fizzBuzz([7, 9]));
 // Desafio 9
 function encode() {
   
