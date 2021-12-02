@@ -14,32 +14,32 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(string) {
-  let splitedString = string.split('') 
-  let splitedWords = []
+  let splitedString = string.split('') ;
+  let splitedWords = [];
   let word = '';
 for (let key in splitedString) {
   if (splitedString[key] !== ' ') {
     word = word + splitedString[key];
   } else {
-    splitedWords.push(word)
-    word  = ''
+    splitedWords.push(word);
+    word  = '';
   }
   if (key >= splitedString.length - 1) {
-    splitedWords.push(word)
-    break
+    splitedWords.push(word);
+    break;
   }
 }
-  return splitedWords
+  return splitedWords;
 }
 
 // Desafio 4
 function concatName(array) {
- return array[array.length -1] + ', ' + array[0]
+ return array[array.length -1] + ', ' + array[0];
 }
 
 // Desafio 5
-function footballPoints() {
-  
+function footballPoints(wins, ties) {
+  return (wins * 3) + ties; 
 }
 
 // Desafio 6
