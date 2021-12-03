@@ -16,7 +16,7 @@ function techList(techs, name) {
   return result
   }
 }
-console.log(techList(["React", "Jest", "HTML", "CSS", "JavaScript"], 'Lucas'));
+
 
 
 // Desafio 11
