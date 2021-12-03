@@ -113,7 +113,7 @@ function encode(string) {
   letters = letters.join('')
   return letters
 }
-console.log(encode('hi there!'));
+
 function decode(string) {
   let number = string.split('')
   
@@ -127,7 +127,7 @@ function decode(string) {
   number = number.join('')
   return number
 }
-console.log(decode('h3 th2r2!'));
+
 module.exports = {
   calcArea,
   catAndMouse,
