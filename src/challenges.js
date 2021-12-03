@@ -93,15 +93,41 @@ function fizzBuzz(numbers) {
   }
   return divisiveis
 }
-console.log(fizzBuzz([7, 9]));
-// Desafio 9
-function encode() {
-  
-}
-function decode() {
-  
-}
 
+// Desafio 9
+let vogais = ['a', 'e', 'i', 'o', 'u']
+let numeros = [1, 2, 3, 4, 5]
+let encoded = ''
+let decoded = ''
+let letters = ''
+
+function encode(string) {
+   letters = string.split('')
+  for(index = 0; index < string.length; index += 1) {
+    for (let key in vogais) {
+      if (string[index] === vogais[key]) {
+        encoded = letters.splice(index, 1, numeros[key])
+      } 
+    }    
+  }
+  letters = letters.join('')
+  return letters
+}
+console.log(encode('hi there!'));
+function decode(string) {
+  let number = string.split('')
+  
+  for(index = 0; index < string.length; index += 1) {
+    for (let key in numeros) {
+      if (string[index] == numeros[key]) {
+        decoded = number.splice(index, 1, vogais[key])
+      } 
+    }    
+  }
+  number = number.join('')
+  return number
+}
+console.log(decode('h3 th2r2!'));
 module.exports = {
   calcArea,
   catAndMouse,
