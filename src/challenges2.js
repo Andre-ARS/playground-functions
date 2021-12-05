@@ -20,7 +20,6 @@ function techList(techs, name) {
 
 
 // Desafio 11
-
 function generatePhoneNumber(numbers) {
   let ddd = ['(','#','#',')', ' ']
   let telNumber = ['#', '#', '#', '#', '#', '-', '#', '#', '#', '#']
@@ -68,10 +67,21 @@ function generatePhoneNumber(numbers) {
 
 
 
-
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+ let somaAB = lineA + lineB;
+ let diferençaAB = Math.abs(lineA - lineB);
+ let somaAC = lineA + lineC;
+ let diferençaAC = Math.abs(lineA - lineC);
+ let somaBC = lineB + lineC;
+ let diferençaBC = Math.abs(lineB - lineC);
+ let isTriangle = false
+ 
+ if (lineA < somaBC && lineA > diferençaBC && lineB < somaAC && lineB > diferençaAC && lineC < somaAB && lineC > diferençaAB) {
+   isTriangle = true
+  }
+   
+ return isTriangle
 }
 
 // Desafio 13
