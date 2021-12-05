@@ -20,9 +20,54 @@ function techList(techs, name) {
 
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+
+function generatePhoneNumber(numbers) {
+  let ddd = ['(','#','#',')', ' ']
+  let telNumber = ['#', '#', '#', '#', '#', '-', '#', '#', '#', '#']
+  let DDD = ''
+  let celPhone = ''
+  let count  = 0;
+  let isValid = true; 
+  let numbersIndex = 0
+  
+  if (numbers.length !== 11) {
+    return "Array com tamanho incorreto."
+  } 
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    for (let index in numbers) {
+      if (numbers[i] === numbers[index] ) {
+        count += 1;
+      } 
+      if (numbers[index] < 0 || numbers[index] > 9 || count >= 3) {
+        isValid = false;
+        break;
+      }
+    }  
+    count = 0
+    if (isValid === false) {
+      break;
+    }
+  }
+  if (isValid === false) {
+    return "não é possível gerar um número de telefone com esses valores"
+  } 
+                
+  for (let index = 0; index < ddd.length + telNumber.length; index += 1) {
+    if (index < 5 && ddd[index] == '#') {
+      DDD = ddd.splice(index,1,numbers[numbersIndex])
+      numbersIndex += 1
+    } else if (index >= 5 && telNumber[index - 5] == '#') {
+      celPhone = telNumber.splice(index - 5,1,numbers[numbersIndex])
+      numbersIndex += 1
+    }
+  }
+  let numberTemplate = [ddd.join(''), telNumber.join('')]
+  return numberTemplate.join('')
 }
+
+
+
 
 // Desafio 12
 function triangleCheck() {
