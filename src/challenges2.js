@@ -85,10 +85,20 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
-}
+function hydrate(string) {
+  let matchNumbers = string.match(/[1-9]/g);
+  let soma = 0;
 
+  for (let index in matchNumbers) {
+    soma = soma + parseInt( matchNumbers[index]);
+  }
+  
+  if (soma !== 1) {
+    return soma + " copos de água"
+  } else {
+    return soma + " copo de água"
+  }
+}
 module.exports = {
   generatePhoneNumber,
   techList,
